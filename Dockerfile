@@ -1,7 +1,7 @@
 FROM golang:alpine AS builder
 
 RUN apk add --no-cache curl git
-RUN curl -fsSL -o /usr/local/bin/dep https://github.com/golang/dep/releases/download/v0.4.1/dep-linux-amd64 && chmod +x /usr/local/bin/dep
+RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
 RUN mkdir -p /go/src/github.com/emersion/emuarius
 WORKDIR /go/src/github.com/emersion/emuarius
